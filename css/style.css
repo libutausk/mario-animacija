@@ -1,0 +1,120 @@
+        html,
+        body {
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+            margin: 0;
+        }
+
+        .sky,
+        .grass,
+        .road {
+            position: relative;
+        }
+/***************
+* Pieva *
+***************/
+        .grass {
+            height: 30%;
+            background: rgb(2, 0, 36);
+            background: linear-gradient(180deg, rgba(2, 0, 36, 1) 0%, rgba(81, 159, 60, 1) 0%, rgba(12, 71, 26, 1) 100%);
+        }
+/***************
+ * Kelias *
+ ***************/
+        .road {
+            height: 30%;
+            background: rgb(2, 0, 36);
+            background: linear-gradient(180deg, rgba(2, 0, 36, 1) 0%, rgba(136, 136, 136, 1) 0%, rgba(56, 56, 56, 1) 100%);
+            border-top: 20px solid darkgrey;
+            border-bottom: 20px solid darkgrey;
+            box-sizing: border-box;
+            /*Apriboja apacia, kad nebesitestu i apacia*/
+        }
+        .roadLines {
+            border-bottom: dashed 15px #f1f1f1;
+            box-sizing: border-box;
+            height: 0px;
+            width: 100%;
+            position: absolute;
+            top: 45%;
+        }
+/***************
+ * Dangus/debesys *
+ ***************/
+                .sky {
+            height: 40%;
+            background: rgb(2, 0, 36);
+            background: linear-gradient(180deg, rgba(2, 0, 36, 1) 0%, rgba(42, 146, 240, 1) 0%, rgba(169, 232, 245, 1) 100%);
+        }
+        .skyCloud {
+            position: absolute;
+        }
+        .cloud {
+            animation: motionForClouds 7s linear infinite reverse;
+            opacity: 0.7;
+        }
+        .cloud0 {
+            animation: motionForClouds 6s linear infinite reverse;
+            top: 10%;
+            opacity: 0.7;
+        }
+        .cloud1 {
+            animation: motionForClouds 9s linear infinite reverse;
+            top: 50%;
+            opacity: 0.7;
+        }
+        .cloud2 {
+            animation: motionForClouds 8s linear infinite reverse;
+            top: 25%;
+            opacity: 0.9;
+        }
+        .cloud3 {
+            animation: motionForClouds 10s linear infinite reverse;
+            top: 45%;
+            opacity: 0.6;
+        }
+/***************
+ * Charakteriai *
+ ***************/
+        .mario {
+            position: absolute;
+            top: -15%;
+            animation: motionForCharacters 3s linear infinite, jump 0.3s 1.5s ease;
+        }
+        .luigi {
+            position: absolute;
+            bottom: 15%;
+            animation: motionForCharacters 4s linear infinite;
+        }
+/***************
+ * Animacijos *
+ ***************/
+        @keyframes motionForCharacters {
+            from {
+                transform: translateX(-30vw);
+            }
+            to {
+                transform: translateX(calc(100vw - 200px));
+            }
+        }
+        @keyframes motionForClouds {
+            from {
+                transform: translateX(-30vw);
+            }
+
+            to {
+                transform: translateX(calc(100vw - 200px));
+            }
+        }
+        @keyframes jump {
+            0% {
+                top: -15%
+            }
+            50% {
+                top: -50%
+            }
+            100% {
+                top: -15%
+            }
+        }
